@@ -1,0 +1,7 @@
+.menu-bar ul li
+{
+	float: left;
+	width: 20%;
+	text-decoration: none;
+	text-align: center;
+}

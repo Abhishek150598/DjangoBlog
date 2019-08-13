@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+{% if form.errors %}
+      <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    <h1>Login Here</h1>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <p>User Name</p>
+        <p>{{form.username}}</p>
+        <p>Password</p>
+        <p>{{form.password}}</p>
+        <input type="submit" name="" value="Login Here">
+        <a href="{% url 'password_reset' %}">Forgot Password?</a><br>
+        <a href="{% url 'register' %}">Don't have an account?</a>
+    </form>
+
+{% endblock %}

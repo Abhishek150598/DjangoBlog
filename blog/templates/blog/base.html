@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css'%}">
+<body>
+	<div class="menu-bar">
+		<ul>
+			<li><a class="nav" href="{% url 'post_index' %}">Home</a></li>
+			<li><a class="nav" href="{% url 'my_posts' %}">My Posts</a></li>
+			<li><a class="nav" href="{% url 'new_post' %}">Add post</a></li>
+			<li><a class="nav" href="#abt">FAQ</a></li>
+			<li><a class="nav" href="#cont">Contact</a></li>
+		</ul>
+	</div>
+	<br><br>
+	{% block content %}
+	{% endblock %}
+				
+
+</body>
+</html>

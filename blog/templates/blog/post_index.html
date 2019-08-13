@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% for post in posts %}
+	<h1><a href = "{% url 'post_detail' post.pk %}">{{ post.title }}</a></h1>
+	<h3>{{ post.author.username }}</h3>
+	<h3>{{ post.publish_date }}</h3>
+	{% if post.author == request.user %}
+		<button float = left><a href = "{% url 'edit_post' post.pk %}">Edit</a></button>
+		<button float = left><a href = "{% url 'delete_post' post.pk %}">Delete</a></button>
+	{% endif %}
+{% endfor %}
+{% endblock %}
